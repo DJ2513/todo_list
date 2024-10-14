@@ -1,0 +1,20 @@
+.tasklist_item {
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  border-color: black;
+  border-radius: 4px;
+}
+
+.tasklist_item_info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 7px;
+  width: 95%;
+}
+
+.tasklist_item_checkbox {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
