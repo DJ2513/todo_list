@@ -1,0 +1,52 @@
+.task-list {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-height: 400px;
+
+  &.dark-mode {
+    background-color: #333;
+    color: white;
+
+    .list-container {
+      background-color: #444;
+      color: white;
+    }
+
+    .card-item {
+      background-color: #555;
+      color: white;
+
+      &.completed {
+        background-color: #666;
+        color: white;
+      }
+    }
+  }
+}
+
+.list-container {
+  padding: 16px;
+}
+
+.card-item {
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: grab;
+
+  &.completed {
+    background-color: #e0e0e0;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

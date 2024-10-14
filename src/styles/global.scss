@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  background-color: #f3f4f6; /* Light mode background */
+  border-radius: 1rem;
+
+  &.dark-mode {
+    background-color: #121212; /* Dark mode background */
+    color: white; /* Light text color in dark mode */
+  }
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+
+  &.dark-mode {
+    background-color: #1e1e1e; /* Dark mode content background */
+  }
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 16fr .5fr;
+  gap: 1rem;
+  padding: 10px;
+
+  &.dark-mode {
+    background-color: #1e1e1e; /* Dark mode dashboard background */
+  }
+}

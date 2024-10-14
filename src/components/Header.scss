@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .search-notifications {
+      display: flex;
+      align-items: right;
+  
+      input {
+        padding: 0.5rem 1rem;
+        margin-right: 1rem;
+        border-radius: 20px;
+        border: 1px solid #d1d5db;
+      }
+  
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+  
