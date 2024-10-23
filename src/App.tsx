@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from './components/Header';
 import DragDropLists from './components/TaskList';
 import CalendarComponent from './components/Calendar';
@@ -13,10 +13,10 @@ const App = () => {
   };
 
   return (
-    <div className={`dashboard ${darkMode ? 'dark-mode' : ''}`}>
+    <div className={`dashboard ${darkMode ? 'dark-mode' : ''}`} style={{transition: '1s ease'}}>
       <div className="main-content">
         <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-        <div className="tasks">
+        <div className="tasks" style={{transition: '1s ease'}}>
           <DragDropLists darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         </div>
         <CalendarComponent darkMode={darkMode} />

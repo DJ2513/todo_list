@@ -11,7 +11,7 @@ import {
   TextField,
   Button,
 } from '@mui/material';
-import './TaskList.scss'; // Importing your SCSS styles
+import './TaskList.scss';
 
 interface CardItem {
   id: string;
@@ -104,7 +104,7 @@ const DragDropLists: React.FC<{ darkMode: boolean; toggleDarkMode: () => void }>
   });
 
   return (
-    <section className={`task-list ${darkMode ? 'dark-mode' : ''}`}>
+    <section className={`task-list ${darkMode ? 'dark-mode' : ''}`} style={{transition: '1s ease'}}>
       <h3>Task Manager</h3>
       <TextField
         label="Add a new task"
@@ -126,10 +126,10 @@ const DragDropLists: React.FC<{ darkMode: boolean; toggleDarkMode: () => void }>
         value={newDueDate}
         onChange={(e) => setNewDueDate(e.target.value)}
         InputProps={{
-          style: { color: darkMode ? 'white' : 'black' }, // Change text color
+          style: { color: darkMode ? 'white' : 'black', transition: '1s ease' }, // Change text color
         }}
         InputLabelProps={{
-          style: { color: darkMode ? 'lightgray' : 'black' }, // Change label color
+          style: { color: darkMode ? 'lightgray' : 'black', transition: '1s ease' }, // Change label color
         }}
       />
       <TextField
@@ -140,10 +140,10 @@ const DragDropLists: React.FC<{ darkMode: boolean; toggleDarkMode: () => void }>
         onChange={(e) => setNewPriority(Number(e.target.value))}
         inputProps={{ min: 1, max: 5 }}
         InputProps={{
-          style: { color: darkMode ? 'white' : 'black' }, // Change text color
+          style: { color: darkMode ? 'white' : 'black', transition: '1s ease'}, // Change text color
         }}
         InputLabelProps={{
-          style: { color: darkMode ? 'lightgray' : 'black' }, // Change label color
+          style: { color: darkMode ? 'lightgray' : 'black', transition: '1s ease' }, // Change label color
         }}
       />
       <select onChange={(e) => setFilter(e.target.value)} value={filter}>
@@ -160,7 +160,7 @@ const DragDropLists: React.FC<{ darkMode: boolean; toggleDarkMode: () => void }>
         <option value="asc">Ascending</option>
         <option value="desc">Descending</option>
       </select>
-      <DragDropContext onDragEnd={onDragEnd}>
+      <DragDropContext onDragEnd={onDragEnd} >
         <Droppable droppableId="tasks">
           {(provided) => (
             <Paper
@@ -176,6 +176,7 @@ const DragDropLists: React.FC<{ darkMode: boolean; toggleDarkMode: () => void }>
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                       className={`card-item ${task.completed ? 'completed' : ''} ${darkMode ? 'dark-mode' : ''}`}
+                      style= {{transition: '1s ease'}}
                     >
                       <Typography
                         onClick={() => toggleTaskCompletion(task.id)}
