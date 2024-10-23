@@ -2,12 +2,16 @@ body {
   display: flex;
   justify-content: center;
   font-family: 'Inter', sans-serif;
-  background-color: #f3f4f6; /* Light mode background */
+  background-color: #f3f4f6;
+  /* Light mode background */
   border-radius: 1rem;
 
   &.dark-mode {
-    background-color: #121212; /* Dark mode background */
-    color: white; /* Light text color in dark mode */
+    border-radius: 1rem;
+    background-color: #121212;
+    /* Dark mode background */
+    color: white;
+    /* Light text color in dark mode */
   }
 }
 
@@ -21,7 +25,8 @@ body {
   padding: 2rem;
 
   &.dark-mode {
-    background-color: #1e1e1e; /* Dark mode content background */
+    background-color: #1e1e1e;
+    /* Dark mode content background */
   }
 }
 
@@ -30,8 +35,13 @@ body {
   grid-template-columns: 16fr .5fr;
   gap: 1rem;
   padding: 10px;
+  transition: 1s ease;
+  border-radius: 1rem;
+  height: 90dvh;
+  width: 70dvw;
 
   &.dark-mode {
-    background-color: #1e1e1e; /* Dark mode dashboard background */
+    background-color: #1e1e1e;
+    /* Dark mode dashboard background */
   }
 }

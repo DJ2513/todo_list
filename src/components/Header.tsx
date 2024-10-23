@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ toggleDarkMode, darkMode }) => {
   return (
-    <AppBar position="static" style={{backgroundColor: darkMode ? '#0f4982' : '#1976d2', transition: "1s ease"}}>
+    <AppBar position="static" style={{ backgroundColor: darkMode ? '#1e1e1e' : '', transition: "1s ease", width: "60dvw" }}>
       <Toolbar>
         <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
           Task Manager
