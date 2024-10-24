@@ -1,0 +1,11 @@
+:root {
+  display: flex;
+  justify-content: center;
+  background-color: #282828;
+  width: 100dvw;
+  height: 100dvh;
+  &.dark-mode {
+    background-color: #1e1e1e;
+    /* Dark mode content background */
+  }
+}

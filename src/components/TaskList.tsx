@@ -50,7 +50,7 @@ const initialTasks: ListsState = {
   ],
 };
 
-const TaskList: React.FC<{ darkMode: boolean }> = ({ darkMode }) => {
+const TaskList: React.FC<{ darkMode: boolean, toggleDarkMode: () => void }> = ({ darkMode }) => {
   const [lists, setLists] = useState<ListsState>(initialTasks);
   const [newTask, setNewTask] = useState<string>('');
   const [newDueDate, setNewDueDate] = useState<string>('');
@@ -211,45 +211,46 @@ const TaskList: React.FC<{ darkMode: boolean }> = ({ darkMode }) => {
           </MenuItem>
         ))}
       </TextField>
-      <br />
 
-      <Paper className={`list-container ${darkMode ? 'dark-mode' : ''}`}>
-        {sortedTasks.map((task) => (
-          <Paper
-            key={task.id}
-            className={`card-item ${task.completed ? 'completed' : ''} ${darkMode ? 'dark-mode' : ''}`}
-            style={{ transition: '1s ease' }}
-          >
-            <Typography
-              onClick={() => toggleTaskCompletion(task.id)}
-              style={{
-                textDecoration: task.completed ? 'line-through' : 'none',
-                cursor: 'pointer',
-              }}
+      <div className="tasks">
+        <Paper className={`list-container ${darkMode ? 'dark-mode' : ''}`}>
+          {sortedTasks.map((task) => (
+            <Paper
+              key={task.id}
+              className={`card-item ${task.completed ? 'completed' : ''} ${darkMode ? 'dark-mode' : ''}`}
+              style={{ transition: '1s ease' }}
             >
-              {task.content} - Due: {task.dueDate} - Priority: {task.priority}
-            </Typography>
-            <Button onClick={() => deleteTask(task.id)} color="error">
-              Delete
-            </Button>
-            <Button
-              onClick={() => {
-                const newContent = prompt('Edit task', task.content) || task.content;
-                const newDueDate = prompt('Edit due date', task.dueDate) || task.dueDate;
-                const newPriorityInput = prompt('Edit priority (low, medium, high)', task.priority) || task.priority;
-                const newPriority =
-                  newPriorityInput === 'low' || newPriorityInput === 'medium' || newPriorityInput === 'high'
-                    ? newPriorityInput
-                    : task.priority;
-                editTask(task.id, newContent, newDueDate, newPriority);
-              }}
-              color="primary"
-            >
-              Edit
-            </Button>
-          </Paper>
-        ))}
-      </Paper>
+              <Typography
+                onClick={() => toggleTaskCompletion(task.id)}
+                style={{
+                  textDecoration: task.completed ? 'line-through' : 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                {task.content} - Due: {task.dueDate} - Priority: {task.priority}
+              </Typography>
+              <Button onClick={() => deleteTask(task.id)} color="error">
+                Delete
+              </Button>
+              <Button
+                onClick={() => {
+                  const newContent = prompt('Edit task', task.content) || task.content;
+                  const newDueDate = prompt('Edit due date', task.dueDate) || task.dueDate;
+                  const newPriorityInput = prompt('Edit priority (low, medium, high)', task.priority) || task.priority;
+                  const newPriority =
+                    newPriorityInput === 'low' || newPriorityInput === 'medium' || newPriorityInput === 'high'
+                      ? newPriorityInput
+                      : task.priority;
+                  editTask(task.id, newContent, newDueDate, newPriority);
+                }}
+                color="primary"
+              >
+                Edit
+              </Button>
+            </Paper>
+          ))}
+        </Paper>
+      </div>
     </section>
   );
 };

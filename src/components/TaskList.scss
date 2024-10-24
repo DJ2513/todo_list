@@ -5,6 +5,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   min-height: 400px;
+  overflow: auto;
 
   &.dark-mode {
     background-color: #333;

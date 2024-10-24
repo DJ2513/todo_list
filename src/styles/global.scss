@@ -1,23 +1,12 @@
-body {
-  display: flex;
-  justify-content: center;
-  font-family: 'Inter', sans-serif;
-  background-color: #f3f4f6;
-  /* Light mode background */
-  border-radius: 1rem;
 
-  &.dark-mode {
-    border-radius: 1rem;
-    background-color: #121212;
-    /* Dark mode background */
-    color: white;
-    /* Light text color in dark mode */
-  }
-}
 
 .app-container {
   display: flex;
-  height: 100vh;
+
+  &.dark-mode {
+    background-color: #1e1e1e;
+    /* Dark mode content background */
+  }
 }
 
 .main-content {
@@ -34,11 +23,10 @@ body {
   display: grid;
   grid-template-columns: 16fr .5fr;
   gap: 1rem;
-  padding: 10px;
   transition: 1s ease;
   border-radius: 1rem;
-  height: 90dvh;
-  width: 70dvw;
+  height: 100%;
+  width: 100%;
 
   &.dark-mode {
     background-color: #1e1e1e;
