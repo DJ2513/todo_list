@@ -7,6 +7,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ toggleDarkMode, darkMode }) => {
+
   return (
     <AppBar position="static" style={{ backgroundColor: darkMode ? '#1e1e1e' : '', transition: "1s ease" }}> {/* We added some inline styling */}
       <Toolbar>
